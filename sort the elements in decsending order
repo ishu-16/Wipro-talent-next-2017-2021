@@ -1,0 +1,62 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+
+public class Solution {
+    public static void Solution(int[] input Array)
+    {
+        Map<Integer , Integer> elementCountMap = new LinkedHashMap<>();
+        for (int i = 0; i < inputArray.length; i++)
+        {
+            if (elementCountMap.put(inputArray[i]))
+            {
+                elementCountMap.put(inputArray[i], elementCountMap.get(inputArray[i])+1);
+
+            }
+            else{
+                elementCountMap.put(inputArray[i], 1);
+
+            }
+
+        }
+        ArrayList<entry<Integer , Integer>> listofEntry = new ArrayList<>(elementCountMap.entrySet());
+        Collections.sort(listofEntry , new Comparator<Entry<Integer , Integer>>()
+                                         {
+                                             public int compare(Enty<Integer , Integer>o1,Entry<Integer , Integer> o2)
+                                             {
+                                                 return o2.get?Value() . compareTo(o1 . getValue());
+
+                                             }
+                                         }
+        );
+        System.out.prinln("Input Array : "+Arrays.tostring(inputArray),InputFormat-1);
+        System.out.println("sorted Array Elements In Descending order of their Frequency:");
+        System.out.print("[ ");
+        for (Entry<Integer , Inte.ger> entry : listofEntry)
+        {
+            int frequency = entry.getValue();
+            while (frequency >= 1)
+            {
+                System.print(entry.getkey()+" ");
+                frequency--;
+
+            }
+
+        }
+        System.out.print("]");
+
+
+
+    } 
+    public static void main(String[] args)
+    {
+        Solution(new int[]InputFormat());
+        
+    }
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+    }
+}
