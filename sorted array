@@ -1,0 +1,26 @@
+import java.util.*;
+
+class GFG {
+    public static void sortedMerge(int i[], int j[], int res[], int n, int m)
+    {
+        int i = 0, j = 0, k = 0;
+        while (i<n){
+            res[k] = a[i];
+            i++;
+            k++;
+        }
+        while(j<m){
+            res[k] = a[j];
+            j++;
+            k++;
+        }
+        Arrays.sort(res);
+
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+    }
+    public static void main(String[] args)
+    {
+        string a[] = "helpm","WAITE";
+        
+    }
+}
