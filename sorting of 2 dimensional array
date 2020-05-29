@@ -1,0 +1,57 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.function.*;
+import java.util.regex.*;
+import java.util.stream.*;
+import static java.util.stream.Collectors.joining;
+import static java.util.stream.Collectors.toList;
+
+
+
+public class Result {
+    public static void main(String[] args)
+    {
+        int arr[]size n ; 
+        Map<Integer, Integer> map = new Hashmap<>();
+        List<Integer> outputArray = new ArrayList<>();
+        for (int current :array){
+            int count = map.getOrDefault(current, 0);
+            map.put(current, count +1);
+            outputArray.add(current);
+        }
+        sortComparator comp = newsortComparator(map);
+        Collections.sort(ouputArray,comp);
+        for (integer i : outputArray){
+            System.out.print(i + " ");
+        }
+
+    }
+}
+class SortComparator implements Comparator<Integer> {
+    private final Map<Integer, Integer>freqMap;
+    SortComparator(Map<Integer, Integer> tFreqMap)
+    {
+        this.freqMap = tFreqMap;
+    }
+    public int compare(Integer k1, Integer k2)
+    {
+        int freqCompare = freqMap.get(k2).compareTo(freqMap.get(k1));
+        int valueCompare = k1.compareTo(k2);
+        if (freqcompare == 0)
+            return valueCompare;
+        else 
+            return freqCompare;
+
+
+    }    
+}   
+
+    
+
+    
+
+public class Solution {
