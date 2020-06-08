@@ -1,0 +1,51 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+import org.junit.Test;
+import static org.junit.Assert.*;
+import com.sun.xml.internal.ws.policy.sourcemodel.Assertions;
+
+public class coloring3NBlocks 
+{
+    coloring3NBlocks
+    coloring3NBlocks;
+    public void init(){
+        coloring3NBlocks = new coloring3NBlocks();
+    }
+    public void firstTest(){
+        int n = 2;
+        int res = coloring3NBlocks.numOfWays(n);
+        Assertions.assertEquals(174,res);
+    }
+    public void secondTest()
+    {
+        int n = 3;
+        int res = coloring3NBlocks.numOfWays(n);
+        Assertions.assertEquals(9750,res);
+    }
+    public void thirdTest()
+    {
+        int n = 4;
+        int res = coloring3NBlocks.numOfWays(n);
+        Assertions.assertEquals(296490,res);
+    }
+    public int numOfWays(int n)
+    {
+        long mod = (long) 1e9 + 7;
+        long pat1 = 6;
+        long pat2 = 6;
+        for(int i = 1; i < n; ++i)
+        {
+            long x = pat1 * 3 + pat2 * 2;
+            long y = pat1 * 2 + pat2 * 2;
+            pat1 = x % mod;
+            pat2 = y % mod;
+        }
+        return (int) ((pat1 + pat2) % mod);
+    }
+
+}
