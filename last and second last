@@ -1,0 +1,23 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+
+
+class Solution{
+    public String lastTwo (String str){
+        if(str.length() < 2 || str.equals(" ")){
+            return str;
+        }
+        String lastTwo = str.substring(str.length() - 2);
+        StringBuilder sb = new StringBuilder(lastTwo);
+        String lastTwoReversed = sb.reverse().toString();
+        return str.substring(0, str.length() - 2) + lastTwoReversed;
+    
+    }
+
+}
